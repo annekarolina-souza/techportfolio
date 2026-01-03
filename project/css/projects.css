@@ -1,0 +1,40 @@
+.projects {
+  width: 1200px;
+  margin-top: 4rem;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.project-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(15, 15, 20, 0.85);
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, #6cf, #9f6cff, #6cf);
+  background-size: 300% 300%;
+  animation: borderFlow 6s ease infinite;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

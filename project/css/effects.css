@@ -1,0 +1,28 @@
+.holo-title {
+  padding: 200px 0px 100px 0px;
+  font-family: "Chunkobold", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    120deg,
+    rgba(120, 255, 255, 0.9),
+    rgba(180, 120, 255, 0.85),
+    rgba(255, 160, 200, 0.9),
+    rgba(120, 255, 255, 0.9)
+  );
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: holoShift 8s ease-in-out infinite;
+}
+
+@keyframes holoShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
